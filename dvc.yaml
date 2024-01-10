@@ -1,0 +1,5 @@
+stages:
+  training:
+    cmd: python3 train.py
+    params:
+      - training

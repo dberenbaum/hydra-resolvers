@@ -1,0 +1,3 @@
+training:
+  pl_hparams:
+    max_epochs: 11
