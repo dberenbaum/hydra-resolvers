@@ -1,0 +1,9 @@
+schema: '2.0'
+stages:
+  training:
+    cmd: python3 train.py
+    params:
+      params.yaml:
+        training:
+          pl_hparams:
+            max_epochs: ${plus_10:11}

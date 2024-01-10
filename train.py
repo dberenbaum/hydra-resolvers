@@ -1,9 +1,11 @@
-from omegaconf import DictConfig
-from ruamel.yaml import YAML
+from omegaconf import OmegaConf
+
+
+OmegaConf.register_new_resolver("plus_10", lambda x: x + 10)
 
 def main() -> None:
-    cfg = DictConfig(YAML(typ="safe").load(open("params.yaml")))
-    print('max epochs are ', cfg.training.pl_hparams.max_epochs)
+    cfg = OmegaConf.load("params.yaml")
+    print(cfg.training.pl_hparams.max_epochs)
 
 if __name__ == "__main__":
     main()
